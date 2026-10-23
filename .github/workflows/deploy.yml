@@ -17,7 +17,7 @@ concurrency:
 jobs:
   build-and-deploy:
     environment:
-      name: github-pages
+      name: edge-arena-production
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
