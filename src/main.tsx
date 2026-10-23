@@ -165,7 +165,7 @@ function Today({ openLab }: { openLab: () => void }) {
         <div>
           <b>Protect the right channel</b>
           <p>
-            River City created 41% of xThreat down their left in the last five
+            Chelsea created 41% of xThreat down their left in the last five
             matches.
           </p>
         </div>
@@ -303,7 +303,7 @@ function Lab() {
         <p>
           {shape === "3-4-2-1"
             ? "Adds a spare player in midfield and protects the right half-space."
-            : "Keeps width while increasing pressure on River City build-up."}
+            : "Keeps width while increasing pressure on Chelsea build-up."}
         </p>
         <button>Save scenario</button>
       </section>
@@ -347,9 +347,9 @@ function Autopilot() {
         <div className="setup-grid">
           <label>
             Opponent
-            <select defaultValue="River City">
-              <option>River City</option>
-              <option>Northbridge FC</option>
+            <select defaultValue="Chelsea">
+              <option>Chelsea</option>
+              <option>Manchester City</option>
             </select>
           </label>
           <label>
@@ -433,7 +433,7 @@ function Autopilot() {
                 <li>
                   <b>Trigger on backward passes</b>
                   <span>
-                    River City retention drops to 62% under first-phase
+                    Chelsea retention drops to 62% under first-phase
                     pressure.
                   </span>
                 </li>
@@ -489,7 +489,7 @@ function Autopilot() {
 function App() {
   const [view, setView] = useState<View>("today");
   const [squad, setSquad] = useState<FootballPlayer[]>(FALLBACK_PLAYERS);
-  const [dataSource, setDataSource] = useState("verified fallback");
+  const [dataSource, setDataSource] = useState("curated offline fallback");
   useEffect(() => {
     const controller = new AbortController();
     loadArsenalSquad(controller.signal)
@@ -497,7 +497,7 @@ function App() {
         setSquad(players);
         setDataSource("ESPN live API");
       })
-      .catch(() => setDataSource("verified fallback"));
+      .catch(() => setDataSource("curated offline fallback"));
     return () => controller.abort();
   }, []);
   const items = [
